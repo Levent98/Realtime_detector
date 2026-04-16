@@ -1,7 +1,7 @@
 /**
   ***********************************************************************************
   * @file    :appcons.h
-  * @author  :PROSENSE Application Team
+  * @author  :Levent Keskin
   * @version :V1.1.0
   * @date    :Sep 21, 2017
   * @brief   :Contains application all defined constants
