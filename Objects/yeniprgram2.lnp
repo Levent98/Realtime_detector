@@ -1,0 +1,23 @@
+--cpu=Cortex-M4.fp
+".\objects\delay.o"
+".\objects\i2c.o"
+".\objects\lcd.o"
+".\objects\main.o"
+".\objects\modbus_rtu.o"
+".\objects\pwm.o"
+".\objects\sht3x.o"
+".\objects\sysclock.o"
+".\objects\uart.o"
+".\objects\interrupts.o"
+".\objects\filter.o"
+".\objects\adc.o"
+".\objects\error_check.o"
+".\objects\sensor_task.o"
+".\objects\watchdog.o"
+".\objects\flash_write.o"
+".\objects\config_manager.o"
+".\objects\startup_stm32f410rx.o"
+".\objects\system_stm32f4xx.o"
+--ro-base 0x08000000 --entry 0x08000000 --rw-base 0x20000000 --entry Reset_Handler --first __Vectors --strict --summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list ".\Listings\yeniprgram2.map" -o .\Objects\yeniprgram2.axf
