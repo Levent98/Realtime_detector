@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<TabPane fx:id="tabPane" prefHeight="1164.0" prefWidth="1499.0" stylesheets="@tabstyle.css" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.sensorgui.ControllerClasses.HelloController">
+
+   <tabs>
+      <Tab closable="false" text="Sensor Data">
+         <content>
+            <AnchorPane fx:id="anchorpane1" prefHeight="1164.0" prefWidth="1499.0">
+               <children>
+                  <TextArea fx:id="LogText" layoutX="219.0" layoutY="491.0" prefHeight="529.0" prefWidth="813.0" />
+                  <Label layoutX="233.0" layoutY="421.0" prefHeight="41.0" prefWidth="168.0" text="SENSOR DATA">
+                     <font>
+                        <Font name="Arial Black" size="14.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="ConnectButton" layoutX="1092.0" layoutY="104.0" mnemonicParsing="false" onAction="#ConnectbuttonClicked" prefHeight="47.0" prefWidth="73.0" text="CONNECT" />
+                  <Button fx:id="RefreshButton" layoutX="991.0" layoutY="104.0" mnemonicParsing="false" onAction="#RefreshbuttonClicked" prefHeight="47.0" prefWidth="83.0" text="REFRESH" />
+                  <ComboBox fx:id="DeviceSelect" layoutX="401.0" layoutY="119.0" prefWidth="220.0" />
+                  <Label layoutX="261.0" layoutY="119.0" prefHeight="25.0" prefWidth="114.0" text="DEVICE SELECT">
+                     <font>
+                        <Font name="Arial Black" size="12.0" />
+                     </font>
+                  </Label>
+                  <ImageView fx:id="sensorImage" fitHeight="200" fitWidth="200" layoutX="30.0" layoutY="50.0">
+                     <image>
+                        <Image url="@PROSENSE.png" />
+                     </image>
+                  </ImageView>
+                  <Button fx:id="PublishButton" layoutX="1290.0" layoutY="107.0" mnemonicParsing="false" onAction="#PublishbuttonClicked" prefHeight="41.0" prefWidth="73.0" text="PUBLISH" />
+                  <Button fx:id="Scanbutton" layoutX="791.0" layoutY="104.0" mnemonicParsing="false" onAction="#Scanbttnonaction" prefHeight="47.0" prefWidth="83.0" text="SCAN" />
+                  <Button fx:id="Stopbutton" layoutX="892.0" layoutY="104.0" mnemonicParsing="false" onAction="#Stopbttnonaction" prefHeight="47.0" prefWidth="83.0" text="STOP" />
+                  <Button fx:id="DisconnectButton" layoutX="1180.0" layoutY="104.0" onAction="#DisconnectButtonClicked" prefHeight="47.0" prefWidth="100.0" text="DISCONNECT" />
+                  <ProgressBar fx:id="progressBar" layoutX="626.0" layoutY="124.0" prefHeight="15.0" prefWidth="157.0" progress="0.0" />
+               </children>
+            </AnchorPane>
+         </content>
+      </Tab>
+
+      <Tab closable="false" text="MODBUS Panel">
+         <content>
+            <AnchorPane fx:id="anchorpane2" prefHeight="1164.0" prefWidth="1499.0">
+               <children>
+                  <Label layoutX="100.0" layoutY="50.0" text="MODBUS PANEL">
+                     <font>
+                        <Font name="Arial Black" size="18.0" />
+                     </font>
+                  </Label>
+
+                  <RadioButton fx:id="modbusRtuRadio" layoutX="100.0" layoutY="95.0" mnemonicParsing="false" selected="true" text="Modbus RTU">
+                     <toggleGroup>
+                        <ToggleGroup fx:id="modbusProtocolGroup" />
+                     </toggleGroup>
+                  </RadioButton>
+                  <RadioButton fx:id="modbusTcpRadio" layoutX="220.0" layoutY="95.0" mnemonicParsing="false" text="Modbus TCP" toggleGroup="$modbusProtocolGroup" />
+
+                  <Label layoutX="100.0" layoutY="130.0" text="TCP Host:" />
+                  <TextField fx:id="modbusHostInput" layoutX="200.0" layoutY="125.0" prefWidth="180.0" promptText="192.168.1.50" />
+                  <Label layoutX="400.0" layoutY="130.0" text="TCP Port:" />
+                  <TextField fx:id="modbusPortInput" layoutX="470.0" layoutY="125.0" prefWidth="100.0" promptText="502" />
+
+                  <Label layoutX="100.0" layoutY="180.0" text="Slave ID:" />
+                  <ComboBox fx:id="modbusSlaveSelect" layoutX="200.0" layoutY="175.0" prefWidth="120.0" />
+
+                  <Label layoutX="100.0" layoutY="230.0" text="Function Code:" />
+                  <ComboBox fx:id="modbusFunctionSelect" layoutX="200.0" layoutY="225.0" prefWidth="180.0" />
+
+                  <Label layoutX="100.0" layoutY="280.0" text="Register Address:" />
+                  <TextField fx:id="modbusRegisterInput" layoutX="250.0" layoutY="275.0" prefHeight="30.0" prefWidth="100.0" promptText="e.g. 1" />
+
+                  <Label layoutX="100.0" layoutY="330.0" text="Number of Registers:" />
+                  <TextField fx:id="modbusCountInput" layoutX="250.0" layoutY="325.0" prefHeight="30.0" prefWidth="100.0" promptText="1" />
+
+                  <Button fx:id="ModbusReadButton" layoutX="100.0" layoutY="390.0" onAction="#ModbusReadAction" prefHeight="40.0" prefWidth="120.0" text="READ" />
+                  <Button fx:id="ModbusConnectButton" layoutX="250.0" layoutY="390.0" onAction="#ModbusConnectAction" prefHeight="40.0" prefWidth="170.0" text="CONNECT MODBUS" />
+
+                  <Label layoutX="100.0" layoutY="460.0" text="Response:" />
+                  <TextArea fx:id="modbusResponseArea" editable="false" layoutX="100.0" layoutY="490.0" prefHeight="280.0" prefWidth="600.0" />
+               </children>
+            </AnchorPane>
+         </content>
+      </Tab>
+
+      <Tab closable="false" text="MQTT Panel">
+         <content>
+            <AnchorPane prefHeight="1164.0" prefWidth="1499.0">
+               <children>
+                  <Label layoutX="100.0" layoutY="50.0" text="MQTT PANEL">
+                     <font>
+                        <Font name="Arial Black" size="18.0" />
+                     </font>
+                  </Label>
+
+                  <Label layoutX="100.0" layoutY="120.0" text="Broker URL:" />
+                  <TextField fx:id="mqttBrokerInput" layoutX="220.0" layoutY="115.0" prefWidth="250.0" promptText="tcp://localhost:1883" />
+
+                  <Label layoutX="100.0" layoutY="170.0" text="Client ID:" />
+                  <TextField fx:id="mqttClientIdInput" layoutX="220.0" layoutY="165.0" prefWidth="250.0" promptText="sensor-gui-client" />
+
+                  <Label layoutX="100.0" layoutY="220.0" text="Topic:" />
+                  <TextField fx:id="mqttTopicInput" layoutX="220.0" layoutY="215.0" prefWidth="250.0" promptText="prosense/device1/data" />
+
+                  <Label layoutX="100.0" layoutY="270.0" text="Payload:" />
+                  <TextArea fx:id="mqttPayloadInput" layoutX="220.0" layoutY="265.0" prefHeight="110.0" prefWidth="420.0" />
+
+                  <Button fx:id="mqttConnectButton" layoutX="100.0" layoutY="410.0" onAction="#MqttConnectAction" prefWidth="130.0" text="CONNECT MQTT" />
+                  <Button fx:id="mqttPublishButton" layoutX="250.0" layoutY="410.0" onAction="#MqttPublishAction" prefWidth="100.0" text="PUBLISH" />
+                  <Button fx:id="mqttSubscribeButton" layoutX="370.0" layoutY="410.0" onAction="#MqttSubscribeAction" prefWidth="100.0" text="SUBSCRIBE" />
+
+                  <Label layoutX="100.0" layoutY="470.0" text="Incoming Messages:" />
+                  <TextArea fx:id="mqttResponseArea" editable="false" layoutX="100.0" layoutY="500.0" prefHeight="260.0" prefWidth="650.0" />
+               </children>
+            </AnchorPane>
+         </content>
+      </Tab>
+   </tabs>
+</TabPane>

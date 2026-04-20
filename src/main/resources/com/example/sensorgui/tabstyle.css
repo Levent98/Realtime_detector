@@ -1,0 +1,9 @@
+/* Tüm sekmelerin genişliğini ayarlıyoruz */
+.tab-pane .tab {
+    -fx-min-width: 150px;   /* Minimum genişlik */
+    -fx-pref-width: 200px;  /* Tercih edilen genişlik */
+    -fx-max-width: 300px;   /* Maksimum genişlik */
+
+    -fx-alignment: center;  /* Başlığı ortala */
+    -fx-padding: 5px 10px;  /* İç boşluk */
+}

@@ -1,0 +1,10 @@
+Project structure includes:
+- Modbus TCP support via ModbusTCPComLayer and ModbusTCPService
+- MQTT support via MQTTComLayer and MQTTService
+- Refactored controller to use service abstractions for Modbus and MQTT
+- Added MQTT tab to JavaFX UI
+- Added Modbus RTU/TCP selection to Modbus panel
+- Improved SensorData model with protocol and raw payload metadata
+- Removed serial listener/polling conflict by simplifying SerialComLayer
+- Updated pom.xml with MQTT dependency and Java compiler target to 21
+- Updated module-info.java for MQTT module access

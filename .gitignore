@@ -1,0 +1,45 @@
+### IntelliJ build output ###
+out/
+out/artifacts/
+
+### Maven build ###
+target/
+
+### Logs ###
+*.log
+
+### Java compiled ###
+*.class
+
+### Jar outputs (artifact) ###
+*.jar
+*.war
+*.ear
+
+# Eğer release jar koyacaksan:
+#!release/*.jar
+
+### Native libraries (jSerialComm vb.) ###
+*.dll
+*.so
+*.dylib
+
+# jSerialComm runtime extract klasörü
+.jSerialComm/
+
+### Node.js (MQTT dashboard) ###
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# istersen bunu da ignore edebilirsin
+package-lock.json
+
+### Environment files ###
+.env
+*.env
+
+### Temporary ###
+*.tmp
+*.temp
