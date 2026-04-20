@@ -11,6 +11,15 @@ This project implements a bare-metal embedded firmware for a real-time industria
 It integrates sensor acquisition, Modbus RTU communication over RS485, LCD output, and robust error handling mechanisms.
 
 ---
+## Images
+
+<p align="center">
+  <img src="dedector.jpeg" width="60%" />
+</p>
+
+<p align="center">
+  <img src="RS485_com_with_desktopGUI.png" width="90%" />
+</p>
 
 ## Features
 
